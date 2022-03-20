@@ -33,17 +33,18 @@ export const actions = {
   CLEAN_ALL: "[all] clean_reducers",
 };
 
+const URI_BASE = "https://task-backend-luisangelsalcedo.herokuapp.com/api";
+
 export const endpoint = {
-  URI_BASE: "https://task-backend-luisangelsalcedo.herokuapp.com/api",
-  LOGIN: `${this.URI_BASE}/user/login`,
-  USERS: `${this.URI_BASE}/users`,
-  USER: `${this.URI_BASE}/user`,
-  BOARD: `${this.URI_BASE}/board`,
-  TASK: `${this.URI_BASE}/task`,
-  GET_USER_AUTH: `${this.URI_BASE}/user/token`,
-  GET_BOARDS_BY_USER: `${this.URI_BASE}/boards/user`,
-  GET_TASKS_BY_BOARD: `${this.URI_BASE}/tasks/board`,
+  LOGIN: `${URI_BASE}/user/login`,
+  USERS: `${URI_BASE}/users`,
+  USER: `${URI_BASE}/user`,
+  BOARD: `${URI_BASE}/board`,
+  TASK: `${URI_BASE}/task`,
+  GET_USER_AUTH: `${URI_BASE}/user/token`,
+  GET_BOARDS_BY_USER: `${URI_BASE}/boards/user`,
+  GET_TASKS_BY_BOARD: `${URI_BASE}/tasks/board`,
   //
-  LOGIN_GOOGLE: `${this.URI_BASE}/usergoogle/login`,
-  USER_GOOGLE: `${this.URI_BASE}/usergoogle`,
+  LOGIN_GOOGLE: `${URI_BASE}/usergoogle/login`,
+  USER_GOOGLE: `${URI_BASE}/usergoogle`,
 };
