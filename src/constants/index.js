@@ -33,16 +33,18 @@ export const actions = {
   CLEAN_ALL: "[all] clean_reducers",
 };
 
+const URI_BASE = "https://task-backend-luisangelsalcedo.herokuapp.com/api";
+
 export const endpoint = {
-  LOGIN: `https://task-backend-luisangelsalcedo.herokuapp.com/api/user/login`,
-  USERS: `https://task-backend-luisangelsalcedo.herokuapp.com/api/users`,
-  USER: `https://task-backend-luisangelsalcedo.herokuapp.com/api/user`,
-  BOARD: `https://task-backend-luisangelsalcedo.herokuapp.com/api/board`,
-  TASK: `https://task-backend-luisangelsalcedo.herokuapp.com/api/task`,
-  GET_USER_AUTH: `https://task-backend-luisangelsalcedo.herokuapp.com/api/user/token`,
-  GET_BOARDS_BY_USER: `https://task-backend-luisangelsalcedo.herokuapp.com/api/boards/user`,
-  GET_TASKS_BY_BOARD: `https://task-backend-luisangelsalcedo.herokuapp.com/api/tasks/board`,
+  LOGIN: `${URI_BASE}/user/login`,
+  USERS: `${URI_BASE}/users`,
+  USER: `${URI_BASE}/user`,
+  BOARD: `${URI_BASE}/board`,
+  TASK: `${URI_BASE}/task`,
+  GET_USER_AUTH: `${URI_BASE}/user/token`,
+  GET_BOARDS_BY_USER: `${URI_BASE}/boards/user`,
+  GET_TASKS_BY_BOARD: `${URI_BASE}/tasks/board`,
   //
-  LOGIN_GOOGLE: `https://task-backend-luisangelsalcedo.herokuapp.com/api/usergoogle/login`,
-  USER_GOOGLE: `https://task-backend-luisangelsalcedo.herokuapp.com/api/usergoogle`,
+  LOGIN_GOOGLE: `${URI_BASE}/usergoogle/login`,
+  USER_GOOGLE: `${URI_BASE}/usergoogle`,
 };

@@ -35,7 +35,8 @@ export const LoginPage = React.memo(() => {
   };
 
   const handleGoogleLogin = response => {
-    dispatch(loginGoogleAsync(response));
+    // dispatch(loginGoogleAsync(response));
+    console.log(response);
   };
 
   useEffect(() => {
