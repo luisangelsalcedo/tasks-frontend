@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllUsersAsync } from "../redux/actions/user.actions";
 import { updateBoardAsync } from "./../redux/actions/board.actions";
+import { Loader } from "./../components/Loader";
 
 export const UsersListBoardPage = React.memo(({ board }) => {
   const { token } = useSelector(state => state.auth);
@@ -37,24 +38,30 @@ export const UsersListBoardPage = React.memo(({ board }) => {
 
       <div className="formInput">
         <div className="users-list" ref={listaUserRef}>
-          {users.map(({ _id, name }) => (
-            //
-            <div className="users-list-item" key={_id}>
-              <div className={_id === board.owner ? "hiden" : ""}>
-                <input
-                  id={_id}
-                  type="checkbox"
-                  onChange={handleChange}
-                  defaultChecked={board.guests.join().indexOf(_id) !== -1}
-                />
-                <label htmlFor={_id}>
-                  {name}
-                  <i className="fa fa-check-circle" aria-hidden="true"></i>
-                </label>
-              </div>
-            </div>
-            //
-          ))}
+          {!users.length ? (
+            <Loader />
+          ) : (
+            <>
+              {users.map(({ _id, name }) => (
+                //
+                <div className="users-list-item" key={_id}>
+                  <div className={_id === board.owner ? "hiden" : ""}>
+                    <input
+                      id={_id}
+                      type="checkbox"
+                      onChange={handleChange}
+                      defaultChecked={board.guests.join().indexOf(_id) !== -1}
+                    />
+                    <label htmlFor={_id}>
+                      {name}
+                      <i className="fa fa-check-circle" aria-hidden="true"></i>
+                    </label>
+                  </div>
+                </div>
+                //
+              ))}
+            </>
+          )}
         </div>
       </div>
     </>

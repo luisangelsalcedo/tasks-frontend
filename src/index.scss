@@ -561,6 +561,7 @@ a {
 // USERSLIST COMPONENT
 .users-list {
   max-height: 300px;
+  overflow-y: auto;
   &-item {
     text-align: left;
     & > div {
